@@ -1,7 +1,7 @@
 # New _ChildNode_, _ParentNode_ methods and _Element.classList_ JavaScript tests
 
 Some tests of working new __ChildNode__, __ParentNode__ methods and __classList__ in JavaScript.  
-You can try if your browser supports this new things :)
+You can try if your browser supports this new things or tests your polyfills :)
 
 __New elements much simplify DOM operations.__
 
