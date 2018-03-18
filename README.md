@@ -12,7 +12,7 @@ More information:
 
 Tests are written in __Polish language__ with description methods.
 
-Check this on __[https://warmaxis.github.io/New_ChildNode_methods_and_classList_JS_tests/](https://warmaxis.github.io/New_ChildNode_methods_and_classList_JS_tests/)__
+Check this on __[https://warmaxis.github.io/New_ChildNode_ParentNode_methods_and_classList_JS_tests/](https://warmaxis.github.io/New_ChildNode_ParentNode_methods_and_classList_JS_tests/)__
 
 Created by __[Michał Milanowski](https://www.linkedin.com/in/michalmilanowski/)__
 
