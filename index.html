@@ -1,0 +1,112 @@
+<style>
+    .test_class_add--remove {
+        color: red;
+    }
+
+    .test_class_add--red {
+        color: red;
+    }
+
+    .test_class_add--green {
+        color: green;
+    }
+
+    .test_class_add--underline {
+        text-decoration: underline;
+    }
+
+</style>
+
+<div>
+    <h2>Testy nowych metod DOM:</h2>
+    <div id="after_container"><strong>Pod spodem wyniki after():</strong></div>
+    <br><br>
+    <div id="append_container"><strong>Pod spodem wyniki append():</strong>
+        <br>
+    </div>
+    <br><br>
+    <div id="before_container"><strong>U góry wyniki before():</strong></div>
+    <br><br>
+    <div id="prepend_container"><br>
+        <strong>U góry wyniki prepend():</strong>
+    </div>
+    <br><br>
+    <div><strong>U dołu nie będzie tekstu jeśli zadziała remove():</strong>
+        <br>
+        <span id="remove_container">DO USUNIĘCIA PRZEZ remove() !</span>
+    </div>
+    <br><br>
+    <div><strong>U dołu będzie zamieniony tekst przez replaceWith():</strong>
+        <br>
+        <span id="replace_container">DO USUNIĘCIA PRZEZ replaceWith() !</span>
+    </div>
+</div>
+<div>
+    <br>
+    <br>
+    <h2>Testy classList:</h2>
+    <div class="test_class_add">
+        <strong>Ten element będzie zielony oraz będzie miał podkreślony tekst, jeśli classList.add() z dwoma elementami zadziała</strong>
+    </div>
+    <br>
+    <div class="test_class_add--remove test_class_add--green test_class_add--underline">
+        <strong>Ten element będzie czerwony oraz bez podkreślenia, jeśli classList.remove() z dwoma elementami zadziała</strong>
+    </div>
+    <br>
+    <div class="test_class_contains">
+        <strong id="contains_results">Tutaj będzie true jeśli classList.contains() działa</strong>
+    </div>
+    <br>
+    <div class="test_class_toggle">
+        <strong>Ten element będzie zielony, jeśli classList.toogle() zadziała</strong>
+    </div>
+    <br>
+    <div class="test_class_toggleToArguments test_class_add--red test_class_add--green">
+        <strong>Ten element będzie czerwony, jeśli classList.toogle() z dwoma argumentami zadziała</strong>
+    </div>
+</div>
+
+<script>
+    console.log('Rozpoczęcie testu nowych metod!');
+
+    // Metody DOM
+    var afterContainer = document.getElementById('after_container');
+    afterContainer.after('after() działa! ', ' after() z dwoma elementami;');
+
+    var appendContainer = document.getElementById('append_container');
+    appendContainer.append('append() działa! ', ' append() z dwoma elementami;');
+
+    var beforeContainer = document.getElementById('before_container');
+    beforeContainer.before('before() działa! ', ' before() z dwoma elementami;');
+
+    var prependContainer = document.getElementById('prepend_container');
+    prependContainer.prepend('prepend() działa! ', ' prepend() z dwoma elementami;');
+
+    var removeContainer = document.getElementById('remove_container');
+    removeContainer.remove();
+
+    var replaceContainer = document.getElementById('replace_container');
+    replaceContainer.replaceWith('replaceWith() działa! ', ' replaceWith() z dwoma elementami;');
+
+    // Metody classList
+    var testClassAdd = document.getElementsByClassName('test_class_add')[0];
+    testClassAdd.classList.add('test_class_add--green', 'test_class_add--underline');
+
+    var testClassRemove = document.getElementsByClassName('test_class_add--remove')[0];
+    testClassRemove.classList.remove('test_class_add--green', 'test_class_add--underline');
+
+    var testClassContains = document.getElementsByClassName('test_class_contains')[0];
+    var resultsContainer = document.getElementById('contains_results');
+    if (testClassContains.classList.contains('test_class_contains')) {
+        testClassContains.classList.add('test_class_add--green');
+        resultsContainer.innerHTML = 'true, classList.contains() działa!';
+    }
+
+    var testClassToggle = document.getElementsByClassName('test_class_toggle')[0];
+    testClassToggle.classList.toggle('test_class_add--green');
+
+    var testClassToggle2Arguments = document.getElementsByClassName('test_class_toggleToArguments')[0];
+    testClassToggle2Arguments.classList.toggle('test_class_add--green', false);
+    testClassToggle2Arguments.classList.toggle('test_class_add--green', false);
+
+</script>
